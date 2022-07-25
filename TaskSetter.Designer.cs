@@ -30,7 +30,7 @@
         {
             this.AddItemButton = new System.Windows.Forms.Button();
             this.FrequencyPicker = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.descTask = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -43,26 +43,23 @@
             this.AddItemButton.TabIndex = 0;
             this.AddItemButton.Text = "Add item";
             this.AddItemButton.UseVisualStyleBackColor = true;
+            this.AddItemButton.Click += new System.EventHandler(this.AddItemButton_Click);
             // 
             // FrequencyPicker
             // 
             this.FrequencyPicker.FormattingEnabled = true;
-            this.FrequencyPicker.Items.AddRange(new object[] {
-            "Every day",
-            "Start of every week",
-            "Start of every month"});
             this.FrequencyPicker.Location = new System.Drawing.Point(12, 150);
             this.FrequencyPicker.Name = "FrequencyPicker";
             this.FrequencyPicker.Size = new System.Drawing.Size(283, 21);
             this.FrequencyPicker.TabIndex = 1;
             // 
-            // textBox1
+            // descTask
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 25);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(283, 103);
-            this.textBox1.TabIndex = 2;
+            this.descTask.Location = new System.Drawing.Point(12, 25);
+            this.descTask.Multiline = true;
+            this.descTask.Name = "descTask";
+            this.descTask.Size = new System.Drawing.Size(283, 103);
+            this.descTask.TabIndex = 2;
             // 
             // label1
             // 
@@ -72,7 +69,6 @@
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Description of task";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -90,7 +86,7 @@
             this.ClientSize = new System.Drawing.Size(305, 209);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.descTask);
             this.Controls.Add(this.FrequencyPicker);
             this.Controls.Add(this.AddItemButton);
             this.Name = "TaskSetter";
@@ -104,7 +100,7 @@
 
         private System.Windows.Forms.Button AddItemButton;
         private System.Windows.Forms.ComboBox FrequencyPicker;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox descTask;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

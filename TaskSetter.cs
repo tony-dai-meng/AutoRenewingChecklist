@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AutoRenewingChecklist
 {
@@ -15,16 +16,27 @@ namespace AutoRenewingChecklist
         public TaskSetter()
         {
             InitializeComponent();
+            InitializeFreqOptions();
+            
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+
+        private void InitializeFreqOptions()
         {
-
+            // Frequency picker adding each value for enum.
+            foreach (string i in Enum.GetNames(typeof(AutoRenewingChecklist.frequency)))
+            {
+                FrequencyPicker.Items.Add(i);
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void AddItemButton_Click(object sender, EventArgs e)
         {
-
+            frequency f = (frequency)Enum.Parse(typeof(frequency), FrequencyPicker.Text, true);
+            item i = new item(descTask.Text, false, f, DateTime.Now);
+            var doc = XDocument.Load(AutoChecklist.xmlPath);
+            i.addItemToChecklist(Program.getAutoChecklist().getCheckListBox(), doc);
         }
+
     }
 }

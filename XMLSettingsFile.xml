@@ -1,1 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<doc>
+	<item>
+		<text>Hello World</text>
+		<checked>true</checked>
+		<freq>Daily</freq>
+		<date>09/07/2022</date>
+	</item>
+</doc>

@@ -11,12 +11,22 @@ namespace AutoRenewingChecklist
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+
+        private static AutoChecklist ac;
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AutoChecklist());
+            ac = new AutoChecklist();
+            Application.Run(ac);
+        }
+
+        //Autochecklist 
+        public static AutoChecklist getAutoChecklist()
+        {
+            return ac;
         }
     }
 }
